@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout Responsive</title>
+    <title>Bố cục Responsive với CSS Flexbox</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Container chính bao bọc toàn bộ bố cục -->
+    <!-- Container chính bao bọc toàn bộ trang -->
     <div class="container">
         <!-- 1. Header -->
         <header class="header">
             <h1>Header - Tiêu Đề Trang Web</h1>
         </header>
 
-        <!-- 2. Navigation -->
+        <!-- 2. Navigation Menu -->
         <nav class="nav">
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Sản phẩm</a></li>
                 <li><a href="#">Dịch vụ</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
@@ -27,16 +27,16 @@
 
         <!-- 3. Main Container chứa Content & Sidebar -->
         <div class="main-container">
-            <!-- Content chính -->
+            <!-- Nội dung chính -->
             <main class="content">
                 <h2>Main Content</h2>
-                <p>Đây là khu vực hiển thị nội dung chính của trang web. Sử dụng thuộc tính <code>flex: 3</code> để chiếm 3 phần độ rộng trên giao diện Desktop.</p>
+                <p>Đây là khu vực hiển thị nội dung chính của trang web. Bố cục này sử dụng CSS Flexbox với thuộc tính <code>flex: 3</code> để chiếm 3/4 chiều rộng trên giao diện Desktop.</p>
             </main>
 
             <!-- Sidebar phụ -->
             <aside class="sidebar">
                 <h3>Sidebar</h3>
-                <p>Nội dung phụ bao gồm quảng cáo, bài viết mới hoặc liên kết nhanh. Sử dụng <code>flex: 1</code> để chiếm 1 phần độ rộng.</p>
+                <p>Nội dung phụ (Tin tức mới, quảng cáo, v.v.). Sử dụng <code>flex: 1</code> để chiếm 1/4 chiều rộng.</p>
             </aside>
         </div>
 

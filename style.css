@@ -1,52 +1,102 @@
-/* Thiết lập chung */
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-h2 {
-    font-size: 18px;
     color: #333333;
+}
+
+/* 1. Thiết lập Flexbox cho Container chính theo chiều dọc */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Giúp Footer luôn tự động bám sát đáy trang */
+}
+
+/* 2. Định dạng Header & Footer */
+.header, .footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 3. Định dạng Navigation Menu */
+.nav {
+    background-color: #444444;
+    padding: 10px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: #f1c40f;
+}
+
+/* 4. Khung Main Container dùng Flexbox sắp xếp hàng ngang */
+.main-container {
+    display: flex;
+    flex: 1; /* Co giãn chiếm toàn bộ phần chiều cao còn trống */
+}
+
+/* Nội dung chính chiếm 3/4 chiều rộng */
+.content {
+    flex: 3;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.content h2 {
     margin-bottom: 10px;
+    color: #2c3e50;
 }
 
-/* Ví dụ 1: row nowrap */
-.container-1 {
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    padding: 5px;
+/* Sidebar chiếm 1/4 chiều rộng */
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-left: 1px solid #e0e0e0;
 }
 
-.container-1 > div {
-    background-color: #007bff;
-    color: white;
-    width: 100px;
-    margin: 10px;
-    text-align: center;
-    line-height: 50px;
-    font-weight: bold;
-    border-radius: 4px;
+.sidebar h3 {
+    margin-bottom: 10px;
+    color: #e67e22;
 }
 
-/* Ví dụ 2: row-reverse nowrap */
-.container-2 {
-    display: flex;
-    flex-flow: row-reverse nowrap;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    padding: 5px;
-}
+/* ========================================== */
+/* 5. RESPONSIVE CHO MOBILE (Media Queries)   */
+/* ========================================== */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Chuyển Content & Sidebar thành 1 cột dọc */
+    }
 
-.container-2 > div {
-    background-color: #28a745;
-    color: white;
-    width: 100px;
-    margin: 10px;
-    text-align: center;
-    line-height: 50px;
-    font-weight: bold;
-    border-radius: 4px;
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 }

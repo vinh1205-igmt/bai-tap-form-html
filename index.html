@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS flex-flow</title>
+    <title>Flexbox Layout Responsive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>1. flex-flow: row nowrap (Mặc định)</h2>
-    <div class="container-1">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-    </div>
+    <!-- Container chính bao bọc toàn bộ bố cục -->
+    <div class="container">
+        <!-- 1. Header -->
+        <header class="header">
+            <h1>Header - Tiêu Đề Trang Web</h1>
+        </header>
 
-    <hr style="margin: 30px 0;">
+        <!-- 2. Navigation -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
 
-    <h2>2. flex-flow: row-reverse nowrap (Đảo ngược hàng)</h2>
-    <div class="container-2">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+        <!-- 3. Main Container chứa Content & Sidebar -->
+        <div class="main-container">
+            <!-- Content chính -->
+            <main class="content">
+                <h2>Main Content</h2>
+                <p>Đây là khu vực hiển thị nội dung chính của trang web. Sử dụng thuộc tính <code>flex: 3</code> để chiếm 3 phần độ rộng trên giao diện Desktop.</p>
+            </main>
+
+            <!-- Sidebar phụ -->
+            <aside class="sidebar">
+                <h3>Sidebar</h3>
+                <p>Nội dung phụ bao gồm quảng cáo, bài viết mới hoặc liên kết nhanh. Sử dụng <code>flex: 1</code> để chiếm 1 phần độ rộng.</p>
+            </aside>
+        </div>
+
+        <!-- 4. Footer -->
+        <footer class="footer">
+            <p>Footer &copy; 2026. All rights reserved.</p>
+        </footer>
     </div>
 
 </body>

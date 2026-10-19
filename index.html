@@ -3,132 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Ký Tài Khoản - Bootstrap Forms</title>
+    <title>Landing Page với Bootstrap 5 & Hình Ảnh</title>
     <!-- Nhúng Bootstrap 5 CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Nhúng Bootstrap Icons CDN cho phần Danh sách tính năng -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body class="bg-light">
 
-    <!-- Container chính căn giữa Form trên màn hình -->
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6">
-                <!-- Thẻ Card bao bọc Form -->
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body p-4 p-md-5">
-                        
-                        <!-- Tiêu đề Form -->
-                        <div class="text-center mb-4">
-                            <h2 class="fw-bold text-primary">Tạo Tài Khoản</h2>
-                            <p class="text-muted">Vui lòng điền đầy đủ thông tin bên dưới để đăng ký</p>
+    <!-- 1. Thanh điều hướng Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="bi bi-rocket-takeoff-fill text-primary me-2"></i>ProductHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Tính năng</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cta">Đăng ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Banner / Hero Section (Tự xây dựng chuẩn Bootstrap 5, không dùng jumbotron) -->
+    <header class="bg-primary text-white py-5">
+        <div class="container py-lg-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold mb-3">Giải Pháp Số Hóa Toàn Diện Cho Doanh Nghiệp</h1>
+                    <p class="lead mb-4 text-white-50">Tối ưu hóa quy trình làm việc, nâng cao hiệu suất vận hành và bứt phá doanh thu cùng hệ sinh thái công nghệ hiện đại.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center justify-content-lg-start">
+                        <a href="#cta" class="btn btn-light btn-lg px-4 me-sm-3 fw-bold text-primary">Đăng Ký Trải Nghiệm</a>
+                        <a href="#about" class="btn btn-outline-light btn-lg px-4">Tìm Hiểu Thêm</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- Hình ảnh Hero co giãn linh hoạt bằng img-fluid -->
+                    <img src="https://picsum.photos/600/400?random=10" alt="Hero Banner Image" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Giới thiệu Sản phẩm / Dịch vụ -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <!-- Áp dụng img-fluid & img-thumbnail -->
+                    <img src="https://picsum.photos/600/400?random=11" alt="About Product Image" class="img-fluid rounded-3 shadow-sm border">
+                </div>
+                <div class="col-lg-6">
+                    <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 rounded-pill fw-semibold">Về Sản Phẩm</span>
+                    <h2 class="fw-bold mb-3">Giao Diện Thân Thiện & Đột Phá Công Nghệ</h2>
+                    <p class="text-secondary">Sản phẩm của chúng tôi được thiết kế đáp ứng đầy đủ các tiêu chuẩn UX/UI hiện đại nhất. Hệ thống vận hành linh hoạt trên đa nền tảng, giúp bạn dễ dàng quản lý dữ liệu mọi lúc, mọi nơi.</p>
+                    <ul class="list-unstyled text-secondary mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Tương thích hoàn hảo trên Mobile, Tablet & Desktop</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Tốc độ xử lý dữ liệu vượt trội</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Bảo mật thông tin đa lớp tiêu chuẩn quốc tế</li>
+                    </ul>
+                    <a href="#features" class="btn btn-outline-primary fw-semibold">Khám phá các tính năng chính <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Danh sách Tính năng nổi bật (Row với 4 cột) -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                <h2 class="fw-bold mb-3">Tính Năng Vượt Trội</h2>
+                <p class="text-secondary">Cung cấp đầy đủ công cụ mạnh mẽ hỗ trợ tối đa cho công việc hàng ngày của bạn.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Tính năng 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-3 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-speedometer2 fs-3"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-2">Tốc Độ Cao</h5>
+                            <p class="card-text text-secondary small">Tối ưu hóa mã nguồn giúp hệ thống phản hồi tức thì với độ trễ gần như bằng 0.</p>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Form Đăng Ký -->
-                        <form action="#" method="POST">
-                            
-                            <!-- 1. Họ và tên -->
-                            <div class="mb-3">
-                                <label for="fullName" class="form-label fw-semibold">Họ và tên <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên của bạn" required>
+                <!-- Tính năng 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-3 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-shield-lock-fill fs-3"></i>
                             </div>
-
-                            <!-- 2. Email -->
-                            <div class="mb-3">
-                                <label for="emailInput" class="form-label fw-semibold">Địa chỉ Email <span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
-                                <div class="form-text text-muted">Chúng tôi cam kết bảo mật thông tin email của bạn.</div>
-                            </div>
-
-                            <!-- 3. Mật khẩu & Xác nhận mật khẩu (Chia 2 cột trên Desktop/Tablet) -->
-                            <div class="row g-3 mb-3">
-                                <div class="col-12 col-sm-6">
-                                    <label for="passwordInput" class="form-label fw-semibold">Mật khẩu <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" id="passwordInput" placeholder="Tối thiểu 8 ký tự" required>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <label for="confirmPasswordInput" class="form-label fw-semibold">Xác nhận mật khẩu <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Nhập lại mật khẩu" required>
-                                </div>
-                            </div>
-
-                            <!-- 4. Giới tính (Radio buttons) -->
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold d-block">Giới tính</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" checked>
-                                    <label class="form-check-label" for="genderMale">Nam</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
-                                    <label class="form-check-label" for="genderFemale">Nữ</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other">
-                                    <label class="form-check-label" for="genderOther">Khác</label>
-                                </div>
-                            </div>
-
-                            <!-- 5. Sở thích (Checkboxes) -->
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold d-block">Sở thích</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="hobbyCoding" value="coding">
-                                    <label class="form-check-label" for="hobbyCoding">Lập trình</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="hobbySports" value="sports">
-                                    <label class="form-check-label" for="hobbySports">Thể thao</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="hobbyMusic" value="music">
-                                    <label class="form-check-label" for="hobbyMusic">Âm nhạc</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="hobbyTravel" value="travel">
-                                    <label class="form-check-label" for="hobbyTravel">Du lịch</label>
-                                </div>
-                            </div>
-
-                            <!-- 6. Quốc gia (Dropdown Select) -->
-                            <div class="mb-4">
-                                <label for="countrySelect" class="form-label fw-semibold">Quốc gia <span class="text-danger">*</span></label>
-                                <select class="form-select" id="countrySelect" required>
-                                    <option value="" selected disabled>-- Chọn quốc gia --</option>
-                                    <option value="VN">Việt Nam</option>
-                                    <option value="US">Mỹ (United States)</option>
-                                    <option value="JP">Nhật Bản</option>
-                                    <option value="KR">Hàn Quốc</option>
-                                    <option value="SGP">Singapore</option>
-                                </select>
-                            </div>
-
-                            <!-- 7. Điều khoản dịch vụ -->
-                            <div class="mb-4 form-check">
-                                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
-                                <label class="form-check-label text-muted small" for="agreeTerms">
-                                    Tôi đồng ý với <a href="#" class="text-primary text-decoration-none">Điều khoản & Chính sách</a> dịch vụ.
-                                </label>
-                            </div>
-
-                            <!-- 8. Nút Submit -->
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg fw-bold">Đăng Ký Ngay</button>
-                            </div>
-
-                        </form>
-
-                        <!-- Đăng nhập link -->
-                        <div class="text-center mt-4">
-                            <p class="text-muted mb-0 small">
-                                Đã có tài khoản? <a href="#" class="text-primary fw-semibold text-decoration-none">Đăng nhập ngay</a>
-                            </p>
+                            <h5 class="card-title fw-bold mb-2">Bảo Mật Cao</h5>
+                            <p class="card-text text-secondary small">Mã hóa dữ liệu đầu cuối đảm bảo an toàn tuyệt đối cho mọi thông tin cá nhân.</p>
                         </div>
+                    </div>
+                </div>
 
+                <!-- Tính năng 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-3 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-phone-vibrate fs-3"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-2">Responsive</h5>
+                            <p class="card-text text-secondary small">Giao diện tự động co giãn vừa vặn với mọi kích thước màn hình thiết bị.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tính năng 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-3 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-headset fs-3"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-2">Hỗ Trợ 24/7</h5>
+                            <p class="card-text text-secondary small">Đội ngũ tư vấn viên kỹ thuật luôn sẵn sàng giải đáp mọi thắc mắc của bạn.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- 5. Nút Kêu Gọi Hành Động (CTA Section) -->
+    <section id="cta" class="py-5 bg-dark text-white text-center">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold mb-3">Sẵn Sàng Bắt Đầu Hành Trình Của Bạn?</h2>
+                    <p class="lead text-white-50 mb-4">Đăng ký ngay hôm nay để nhận quyền truy cập miễn phí 30 ngày dùng thử toàn bộ tính năng cao cấp.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="btn btn-primary btn-lg px-5 fw-bold shadow">Đăng Ký Ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-black text-white-50 py-4 text-center border-top border-secondary">
+        <div class="container">
+            <p class="mb-0 small">&copy; 2026 ProductHub. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Nhúng Bootstrap 5 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
